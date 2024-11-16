@@ -53,7 +53,7 @@ class Solution{
         
     }
 
-    //Tabulation
+    //TABULATION
     // public int minimumEnergy(int arr[],int N) {
     //     int[] dp = new int[N];
     //     dp[0] = 0;
