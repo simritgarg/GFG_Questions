@@ -33,13 +33,8 @@ class GFG {
 class Solution {
 
     static Boolean isSubsetSum(int arr[], int target) {
-        Boolean[][] dp = new Boolean[arr.length][target+1];
-        // for(boolean[] i: dp){
-        //     Arrays.fill(i,-1);
-        // }
-        if(checkTarget(arr,0,target,dp)){
-            return true;
-        }
+        Boolean[][] dp = new Boolean[arr.length+1][target+1];
+        if(checkTarget(arr,0,target,dp)) return true;
         else return false;
     }
     static boolean checkTarget(int[] arr, int idx, int target, Boolean[][] dp){
