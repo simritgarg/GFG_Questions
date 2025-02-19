@@ -37,26 +37,32 @@ class Solution {
         int floor = -1, ceil = -1;
         while(l<=r){
             int mid = l + (r-l)/2;
-            if(x>=arr[mid]){
+            if (arr[mid] == x) {
+                return new int[]{arr[mid], arr[mid]}; // If exact match, floor & ceil are the same
+            } 
+            else if(x>=arr[mid]){
                 floor = arr[mid];
                 l = mid+1;
             } 
-            else r = mid-1;
+            else{
+                ceil = arr[mid];
+                r = mid-1;
+            } 
             
         }
-        l = 0;
-        r = arr.length-1;
+        // l = 0;
+        // r = arr.length-1;
 
-        while (l <= r) {
-            int mid = l + (r - l) / 2;
+        // while (l <= r) {
+        //     int mid = l + (r - l) / 2;
 
-            if (arr[mid] >= x) {
-                ceil = arr[mid];
-                r = mid - 1; 
-            } else {
-                l = mid + 1;
-            }
-        }
+        //     if (arr[mid] >= x) {
+        //         ceil = arr[mid];
+        //         r = mid - 1; 
+        //     } else {
+        //         l = mid + 1;
+        //     }
+        // }
         return new int[]{floor, ceil};
         
     }
