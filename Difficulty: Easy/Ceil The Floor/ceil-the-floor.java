@@ -32,38 +32,24 @@ System.out.println("~");
 class Solution {
     public int[] getFloorAndCeil(int x, int[] arr) {
         Arrays.sort(arr);
-        int l = 0;
-        int r = arr.length-1;
-        int floor = -1, ceil = -1;
-        while(l<=r){
-            int mid = l + (r-l)/2;
-            if (arr[mid] == x) {
-                return new int[]{arr[mid], arr[mid]}; // If exact match, floor & ceil are the same
-            } 
-            else if(x>=arr[mid]){
+        int left = 0;
+        int right = arr.length-1;
+        int floor = -1;
+        int ceil = -1;
+        while(left<=right){
+            int mid = left + (right-left)/2;
+            if(arr[mid] == x){
+                return new int[]{arr[mid],arr[mid]};
+            }
+            else if(arr[mid]<x){
                 floor = arr[mid];
-                l = mid+1;
-            } 
+                left = mid+1;
+            }
             else{
                 ceil = arr[mid];
-                r = mid-1;
-            } 
-            
+                right = mid-1;
+            }
         }
-        // l = 0;
-        // r = arr.length-1;
-
-        // while (l <= r) {
-        //     int mid = l + (r - l) / 2;
-
-        //     if (arr[mid] >= x) {
-        //         ceil = arr[mid];
-        //         r = mid - 1; 
-        //     } else {
-        //         l = mid + 1;
-        //     }
-        // }
-        return new int[]{floor, ceil};
-        
+        return new int[]{floor,ceil};
     }
 }
