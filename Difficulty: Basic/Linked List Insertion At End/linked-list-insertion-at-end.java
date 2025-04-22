@@ -32,10 +32,6 @@ class Solution {
     // Function to insert a node at the end of the linked list.
     Node insertAtEnd(Node head, int x) {
         if(head == null) return new Node(x);
-        if(head.next == null){
-            head.next = new Node(x);
-            return head;
-        } 
         Node curr = head;
         while(curr.next != null){
             curr = curr.next;
