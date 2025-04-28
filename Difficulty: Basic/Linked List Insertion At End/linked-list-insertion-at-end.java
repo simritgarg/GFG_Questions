@@ -31,13 +31,15 @@ class Node{
 class Solution {
     // Function to insert a node at the end of the linked list.
     Node insertAtEnd(Node head, int x) {
-        if(head == null) return new Node(x);
+        Node newNode = new Node(x);
+        if(head == null) return newNode;
         Node curr = head;
         while(curr.next != null){
             curr = curr.next;
         }
-        curr.next = new Node(x);
+        curr.next = newNode;
         return head;
+        
     }
 }
 
