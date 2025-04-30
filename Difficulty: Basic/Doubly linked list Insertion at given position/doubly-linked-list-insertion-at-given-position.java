@@ -101,19 +101,17 @@ class Solution {
     // Function to insert a new node at given position in doubly linked list.
     Node addNode(Node head, int p, int x) {
         Node newNode = new Node(x);
+        if(head == null) return newNode;
         Node curr = head;
         for(int i=0;i<p;i++){
-            if(curr == null) return head;
             curr = curr.next;
-            
         }
         newNode.next = curr.next;
         newNode.prev = curr;
-        if(curr.next != null){
-            curr.next.prev = newNode;
-        }
+        if(curr.next != null) curr.next.prev = newNode;
         curr.next = newNode;
         return head;
+        
         
     }
 }
